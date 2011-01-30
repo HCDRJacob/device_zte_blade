@@ -1,5 +1,36 @@
 #!/bin/sh
 
+# Copyright (C) 2010 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+DEVICE=blade
+STAGESYS=~/cm6-$DEVICE/system
+
+if [ "$1" = "pull" ]; then
+  if [ -s "$STAGESYS" ]; then
+  rm -R ~/cm6-$DEVICE
+  fi
+ mkdir ~/cm6-$DEVICE
+ mkdir $STAGESYS
+ mkdir $STAGESYS/bin
+ mkdir $STAGESYS/lib
+ mkdir $STAGESYS/etc
+ adb pull /system/bin $STAGESYS/bin
+ adb pull /system/lib $STAGESYS/lib
+ adb pull /system/etc $STAGESYS/etc
+fi
+
 mkdir -p ../../../vendor/zte/blade/proprietary
 
 DIRS="
@@ -16,9 +47,6 @@ done
 FILES="
 bin/hci_qcomm_init
 bin/qmuxd
-bin/sensorserver_yamaha
-bin/updateSensorNV
-bin/gsensorcalibration
 
 etc/firmware/yamato_pfp.fw
 etc/firmware/yamato_pm4.fw
@@ -32,7 +60,7 @@ lib/egl/libq3dtools_adreno200.so
 lib/hw/gralloc.default.so
 lib/hw/gralloc.msm7k.so
 
-lib/hw/sensors.qcom.so
+lib/hw/sensors.default.so
 
 lib/liba2dp.so
 lib/libaudioeq.so
@@ -80,12 +108,8 @@ lib/libOmxQcelpDec.so
 lib/libOmxVidEnc.so
 lib/libOmxWmaDec.so
 lib/libOmxWmvDec.so
-
-lib/libms3c_yamaha.so
-lib/libsensor_yamaha.so
 "
 
 for FILE in $FILES; do
-	adb pull system/$FILE ../../../vendor/zte/blade/proprietary/$FILE
+	cp $STAGESYS/$FILE ../../../vendor/zte/blade/proprietary/$FILE
 done
-
