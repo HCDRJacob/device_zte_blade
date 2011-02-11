@@ -12,6 +12,9 @@ PRODUCT_LOCALES += hdpi
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=240
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sf.hwrotation=180
+
 # HAL libs and other system binaries
 PRODUCT_PACKAGES += \
     hwprops \
@@ -47,8 +50,8 @@ PRODUCT_COPY_FILES += \
 
 # Board-specific init
 PRODUCT_COPY_FILES += \
-    device/zte/blade/init.blade.rc:root/init.blade.rc
-#    device/zte/blade/ueventd.qct.rc:root/ueventd.qct.rc
+    device/zte/blade/init.blade.rc:root/init.blade.rc \
+    device/zte/blade/ueventd.blade.rc:root/ueventd.blade.rc
 
 ## RIL related stuff
 PRODUCT_COPY_FILES += \
@@ -71,6 +74,7 @@ PRODUCT_COPY_FILES += \
     vendor/zte/blade/proprietary/lib/libqueue.so:system/lib/libqueue.so \
     vendor/zte/blade/proprietary/lib/libcm.so:system/lib/libcm.so \
     vendor/zte/blade/proprietary/lib/libdll.so:system/lib/libdll.so \
+    vendor/zte/blade/proprietary/lib/libril.so:system/lib/libril.so \
     vendor/zte/blade/proprietary/lib/libril-qc-1.so:system/lib/libril-qc-1.so \
     vendor/zte/blade/proprietary/lib/libril-qcril-hook-oem.so:system/lib/libril-qcril-hook-oem.so
 
@@ -144,7 +148,7 @@ PRODUCT_COPY_FILES += \
     device/zte/blade/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
     device/zte/blade/vold.fstab:system/etc/vold.fstab \
     device/zte/blade/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
-    device/zte/blade/blade_keypad.kl:system/usr/keylayout/blade_keypad.kl
+    device/zte/blade/qwerty.kl:system/usr/keylayout/qwerty.kl
 
 
 $(call inherit-product, build/target/product/full_base.mk)
@@ -152,4 +156,4 @@ $(call inherit-product, build/target/product/full_base.mk)
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := blade
 PRODUCT_DEVICE := blade
-PRODUCT_MODEL := zte blade
+PRODUCT_MODEL := ZTE-BLADE

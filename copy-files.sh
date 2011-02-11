@@ -81,6 +81,7 @@ lib/liboncrpc.so
 lib/libpbmlib.so
 lib/libqmi.so
 lib/libqueue.so
+lib/libril.so
 lib/libril-qc-1.so
 lib/libril-qcril-hook-oem.so
 lib/libril.so
@@ -92,7 +93,6 @@ lib/libmmjpeg.so
 lib/liboemcamera.so
 
 lib/libmm-adspsvc.so
-lib/libOmxAacDec.so
 lib/libomx_aacdec_sharedlibrary.so
 lib/libOmxAmrDec.so
 lib/libOmxAmrEnc.so
