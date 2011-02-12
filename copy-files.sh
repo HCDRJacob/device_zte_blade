@@ -81,7 +81,7 @@ lib/liboncrpc.so
 lib/libpbmlib.so
 lib/libqmi.so
 lib/libqueue.so
-lib/libril.so
+lib/librpc.so
 lib/libril-qc-1.so
 lib/libril-qcril-hook-oem.so
 lib/libril.so

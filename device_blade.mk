@@ -50,7 +50,7 @@ PRODUCT_COPY_FILES += \
 
 # Board-specific init
 PRODUCT_COPY_FILES += \
-    device/zte/blade/init.blade.rc:root/init.blade.rc \
+    device/zte/blade/init.qcom.rc:root/init.qcom.rc \
     device/zte/blade/ueventd.blade.rc:root/ueventd.blade.rc
 
 ## RIL related stuff
@@ -110,7 +110,7 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml
 
 PRODUCT_COPY_FILES += \
-    device/zte/blade/prebuilt/librpc.so:system/lib/librpc.so
+    vendor/zte/blade/proprietary/lib/librpc.so:system/lib/librpc.so
 
 ## Camera proprietaries
 PRODUCT_COPY_FILES += \
@@ -147,6 +147,8 @@ PRODUCT_COPY_FILES += \
     device/zte/blade/media_profiles.xml:system/etc/media_profiles.xml \
     device/zte/blade/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
     device/zte/blade/vold.fstab:system/etc/vold.fstab \
+    device/zte/blade/init.bt.sh:system/etc/init.bt.sh \
+    device/zte/blade/ar6000.ko:system/wifi/ar6000.ko \
     device/zte/blade/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
     device/zte/blade/qwerty.kl:system/usr/keylayout/qwerty.kl
 

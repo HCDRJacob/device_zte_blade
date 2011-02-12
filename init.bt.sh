@@ -83,7 +83,7 @@ QSOC_DEVICE=${1:-"/dev/ttyHS0"}
 QSOC_TYPE=${2:-"any"}
 QSOC_BAUD=${3:-"3000000"}
 
-/system/bin/hci_qcomm_init -d $QSOC_DEVICE -s $QSOC_BAUD -r 32000000
+/system/bin/hci_qcomm_init -d $QSOC_DEVICE -s $QSOC_BAUD 
 
 exit_code_hci_qcomm_init=$?
 

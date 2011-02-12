@@ -50,7 +50,6 @@ JS_ENGINE := v8
 
 TARGET_PROVIDES_LIBAUDIO := true
 
-# Use 2G VMSPLIT. I plan to get rid of the need for this soon.
 TARGET_USES_2G_VM_SPLIT := true
 
 TARGET_USES_OLD_LIBSENSORS_HAL:=true
