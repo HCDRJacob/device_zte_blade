@@ -4,9 +4,9 @@ BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_QCOM_LIBS := true
 BOARD_HAVE_BLUETOOTH := true
 
-WIFI_DRIVER_MODULE_NAME     := ar6000
-WIFI_DRIVER_MODULE_PATH     := rfkill
-BOARD_WPA_SUPPLICANT_DRIVER:=WEXT
+BOARD_WPA_SUPPLICANT_DRIVER := AWEXT
+WIFI_DRIVER_MODULE_PATH     := "/system/wifi/ar6000.ko"
+WIFI_DRIVER_MODULE_NAME     := "ar6000"
 
 TARGET_USES_OLD_LIBSENSORS_HAL := true
 
@@ -27,7 +27,7 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
 
 TARGET_OTA_ASSERT_DEVICE := blade
 
-BOARD_KERNEL_CMDLINE := mem=210M console=null androidboot.hardware=qcom no_console_suspend
+BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom no_console_suspend g_android.product_id=0x1354
 BOARD_KERNEL_BASE := 0x02a00000
 #BOARD_PAGE_SIZE := 0x00000800
 
