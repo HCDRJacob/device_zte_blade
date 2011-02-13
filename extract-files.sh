@@ -16,6 +16,9 @@ done
 FILES="
 bin/hci_qcomm_init
 bin/qmuxd
+bin/sensorserver_yamaha
+bin/updateSensorNV
+bin/gsensorcalibration
 
 etc/firmware/yamato_pfp.fw
 etc/firmware/yamato_pm4.fw
@@ -29,8 +32,7 @@ lib/egl/libq3dtools_adreno200.so
 lib/hw/gralloc.default.so
 lib/hw/gralloc.msm7k.so
 
-lib/hw/sensors.default.so
-lib/hw/lights.msm7k.so
+lib/hw/sensors.qcom.so
 
 lib/liba2dp.so
 lib/libaudioeq.so
@@ -51,7 +53,6 @@ lib/liboncrpc.so
 lib/libpbmlib.so
 lib/libqmi.so
 lib/libqueue.so
-lib/librpc.so
 lib/libril-qc-1.so
 lib/libril-qcril-hook-oem.so
 lib/libril.so
@@ -63,6 +64,7 @@ lib/libmmjpeg.so
 lib/liboemcamera.so
 
 lib/libmm-adspsvc.so
+lib/libOmxAacDec.so
 lib/libomx_aacdec_sharedlibrary.so
 lib/libOmxAmrDec.so
 lib/libOmxAmrEnc.so
@@ -78,6 +80,9 @@ lib/libOmxQcelpDec.so
 lib/libOmxVidEnc.so
 lib/libOmxWmaDec.so
 lib/libOmxWmvDec.so
+
+lib/libms3c_yamaha.so
+lib/libsensor_yamaha.so
 "
 
 for FILE in $FILES; do

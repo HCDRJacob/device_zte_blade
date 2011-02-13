@@ -152,12 +152,12 @@ PRODUCT_COPY_FILES += \
     device/zte/blade/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
     device/zte/blade/vold.fstab:system/etc/vold.fstab \
     device/zte/blade/init.bt.sh:system/etc/init.bt.sh \
+    device/zte/blade/prebuilt/vold:system/bin/vold \
     device/zte/blade/prebuilt/wifi/ar6000.ko:system/wifi/ar6000.ko \
     device/zte/blade/prebuilt/wifi/athtcmd_ram.bin:system/wifi/athtcmd_ram.bin \
     device/zte/blade/prebuilt/wifi/athwlan.bin.z77:system/wifi/athwlan.bin.z77 \
-    device/zte/blade/prebuilt/wifi/wifi-start.sh:system/bin/wifi-start.sh \
     device/zte/blade/prebuilt/wifi/data.patch.hw2_0.bin:system/wifi/data.patch.hw2_0.bin \
-    device/zte/blade/prebuilt/wifi/reg_code:system/wifi/reg_code \
+    device/zte/blade/prebuilt/wifi/regcode:system/wifi/regcode \
     device/zte/blade/prebuilt/akmd2:system/bin/akmd2 \
     device/zte/blade/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
     device/zte/blade/qwerty.kl:system/usr/keylayout/qwerty.kl
