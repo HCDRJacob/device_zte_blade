@@ -13,7 +13,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=240
 
 PRODUCT_PROPERTY_OVERRIDES += \
+    qemu.sf.lcd_density=240
+
+PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.hwrotation=180
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    wifi.interface=wlan0 \
+    wifi.supplicant_scan_interval=15
 
 # HAL libs and other system binaries
 PRODUCT_PACKAGES += \
@@ -120,16 +127,13 @@ PRODUCT_COPY_FILES += \
 
 ## Atheros AR6002 firmware
 PRODUCT_COPY_FILES += \
-    device/zte/blade/prebuilt/data.patch.hw2_0.bin:system/etc/firmware/data.patch.hw2_0.bin \
-    device/zte/blade/prebuilt/eeprom.bin:system/etc/firmware/eeprom.bin \
-    device/zte/blade/prebuilt/athwlan.bin.z77:system/etc/firmware/athwlan.bin.z77 \
     device/zte/blade/hostapd.conf:system/etc/wifi/hostapd.conf
 
 ## Other libraries and proprietary binaries
 PRODUCT_COPY_FILES += \
     vendor/zte/blade/proprietary/bin/hci_qcomm_init:system/bin/hci_qcomm_init \
-    device/zte/blade/prebuilt/init.qcom.bt.sh:system/bin/init.qcom.bt.sh \
     vendor/zte/blade/proprietary/lib/hw/sensors.default.so:system/lib/hw/sensors.default.so \
+    vendor/zte/blade/proprietary/lib/hw/lights.msm7k.so:system/lib/hw/lights.msm7k.so \
     device/zte/blade/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt \
     device/zte/blade/AudioFilter.csv:system/etc/AudioFilter.csv \
     vendor/zte/blade/proprietary/lib/liba2dp.so:system/lib/liba2dp.so \
@@ -148,7 +152,13 @@ PRODUCT_COPY_FILES += \
     device/zte/blade/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
     device/zte/blade/vold.fstab:system/etc/vold.fstab \
     device/zte/blade/init.bt.sh:system/etc/init.bt.sh \
-    device/zte/blade/ar6000.ko:system/wifi/ar6000.ko \
+    device/zte/blade/prebuilt/wifi/ar6000.ko:system/wifi/ar6000.ko \
+    device/zte/blade/prebuilt/wifi/athtcmd_ram.bin:system/wifi/athtcmd_ram.bin \
+    device/zte/blade/prebuilt/wifi/athwlan.bin.z77:system/wifi/athwlan.bin.z77 \
+    device/zte/blade/prebuilt/wifi/wifi-start.sh:system/bin/wifi-start.sh \
+    device/zte/blade/prebuilt/wifi/data.patch.hw2_0.bin:system/wifi/data.patch.hw2_0.bin \
+    device/zte/blade/prebuilt/wifi/reg_code:system/wifi/reg_code \
+    device/zte/blade/prebuilt/akmd2:system/bin/akmd2 \
     device/zte/blade/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
     device/zte/blade/qwerty.kl:system/usr/keylayout/qwerty.kl
 

@@ -61,6 +61,7 @@ lib/hw/gralloc.default.so
 lib/hw/gralloc.msm7k.so
 
 lib/hw/sensors.default.so
+lib/hw/lights.msm7k.so
 
 lib/liba2dp.so
 lib/libaudioeq.so

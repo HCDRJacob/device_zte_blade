@@ -13,7 +13,7 @@
 # limitations under the License.
 
 
-ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),blade)
+ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),-----)
 
 LOCAL_PATH:= $(call my-dir)
 # HAL module implemenation, not prelinked and stored in
