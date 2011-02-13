@@ -27,7 +27,6 @@ PRODUCT_PACKAGES += \
     hwprops \
     abtfilt \
     gps.blade \
-    lights.blade \
     copybit.blade \
     gralloc.blade \
     libOmxCore
@@ -156,14 +155,16 @@ PRODUCT_COPY_FILES += \
     device/zte/blade/prebuilt/akmd2:system/bin/akmd2 \
     device/zte/blade/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
     device/zte/blade/qwerty.kl:system/usr/keylayout/qwerty.kl \
-    device/zte/blade/prebuilt/ar6k/athwlan.bin.z77:system/etc/firmware/athwlan.bin.z77 \
-    device/zte/blade/prebuilt/ar6k/eeprom.bin:system/etc/firmware/eeprom.bin \
-    device/zte/blade/prebuilt/ar6k/data.patch.hw2_0.bin:system/etc/firmware/data.patch.hw2_0.bin \
-#    device/zte/blade/prebuilt/wifi/ar6000.ko:system/wifi/ar6000.ko \
-#    device/zte/blade/prebuilt/wifi/athtcmd_ram.bin:system/wifi/athtcmd_ram.bin \
-#    device/zte/blade/prebuilt/wifi/athwlan.bin.z77:system/wifi/athwlan.bin.z77 \
-#    device/zte/blade/prebuilt/wifi/data.patch.hw2_0.bin:system/wifi/data.patch.hw2_0.bin \
-#    device/zte/blade/prebuilt/wifi/regcode:system/wifi/regcode \
+    device/zte/blade/prebuilt/wifi/ar6000.ko:system/lib/modules/ar6000.ko \
+    device/zte/blade/prebuilt/wifi/athtcmd_ram.bin:system/wifi/athtcmd_ram.bin \
+    device/zte/blade/prebuilt/wifi/wifi-start.sh:system/bin/wifi-start.sh \
+    device/zte/blade/prebuilt/wifi/athwlan.bin.z77:system/wifi/athwlan.bin.z77 \
+    device/zte/blade/prebuilt/wifi/data.patch.hw2_0.bin:system/wifi/data.patch.hw2_0.bin \
+    device/zte/blade/prebuilt/wifi/regcode:system/wifi/regcode \
+#    device/zte/blade/prebuilt/ar6k/athwlan.bin.z77:system/etc/firmware/athwlan.bin.z77 \
+#    device/zte/blade/prebuilt/ar6k/eeprom.bin:system/etc/firmware/eeprom.bin \
+#    device/zte/blade/prebuilt/ar6k/data.patch.hw2_0.bin:system/etc/firmware/data.patch.hw2_0.bin \
+#    device/zte/blade/prebuilt/ar6k/ar6000.ko:system/lib/modules/ar6000.ko
 
 
 $(call inherit-product, build/target/product/full_base.mk)

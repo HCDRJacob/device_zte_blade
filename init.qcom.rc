@@ -68,14 +68,10 @@ on boot
     mkdir /data/radio 0777
 
     # Create the directories used by the Wireless subsystem
-    mkdir /data/misc 01771 system misc
     mkdir /data/misc/wifi 0770 system wifi
-    mkdir /data/misc/wifi/sockets
-    chown wifi wifi /data/misc/wifi/sockets
-    chmod 770 /data/misc/wifi/sockets
+    mkdir /data/misc/wifi/sockets 0770 wifi wifi
     mkdir /data/misc/dhcp 0770 dhcp dhcp
     chown dhcp dhcp /data/misc/dhcp
-    mkdir /data/system 0775 system system
     
      # Create directories for wiper services
     mkdir /data/wpstiles/ 0777 shell
@@ -83,6 +79,7 @@ on boot
 
 on property:init.svc.wpa_supplicant=stopped
     stop dhcpcd
+
 #ZTE_AKMD_FYA_001 20100224 +++++++    
     chmod 0777 /dev/akm8973_aot
     chmod 0777 /dev/akm8973_dev
@@ -95,7 +92,7 @@ service wpa_supplicant /system/bin/logwrapper /system/bin/wpa_supplicant -Dawext
     disabled
     oneshot
 
-service dhcpcd /system/bin/dhcpcd wlan0 -BKL
+service dhcpcd /system/bin/dhcpcd -BKL wlan0
     disabled
     oneshot
 
